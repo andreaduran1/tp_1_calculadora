@@ -50,7 +50,7 @@ def calculadora():
     while True:
 
         menu(a,b)
-        opcion = input("Seleccione una opción: ")
+        opcion = input("Ingrese una opción: ")
 
         match opcion:
             case "1":
@@ -93,7 +93,7 @@ def calculadora():
                     print(f"b) El resultado de A-B es: {resultados.get('resta', 'No calculado')}")
                     resultado = resultados.get('division', 'No calculado')
                     if isinstance(resultado, str):
-                        print(f"c){resultado}")
+                        print(f"c) {resultado}")
                     else:
                         print(f"c) El resultado de A/B es: {resultado}")
                     print(f"d) El resultado de A*B es: {resultados.get('multiplicacion', 'No calculado')}")
@@ -107,7 +107,7 @@ def calculadora():
                 break
 
             case _:
-                print("La opción no es válida. Intente de nuevo.")
+                print("La opción no es válida. Intenta de nuevo.")
                 
         
 
