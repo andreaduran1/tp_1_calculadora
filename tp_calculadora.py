@@ -54,20 +54,26 @@ def calculadora():
         match opcion:
             case "1":
                 while True:
-                    try:
-                        a = int(input("Ingrese el primer operando: "))
+                    aux = input("Ingresa un número entero: ")
+                    entero = validar_entero(aux)
+
+                    if entero:
+                        a = entero
                         break
-                    except ValueError:
+                    else:
                         print("Por favor, ingrese un número entero.\n")
                 flag_primer_operando = True
 
             case "2":
                 if flag_primer_operando == True:
                     while True:
-                        try:
-                            b = int(input("Ingrese el segundo operando: "))
+                        aux = input("Ingresa un número entero: ")
+                        entero = validar_entero(aux)
+
+                        if entero:
+                            b = entero
                             break
-                        except ValueError:
+                        else:
                             print("Por favor, ingrese un número entero.\n")
                     flag_segundo_operando = True
                 else:
@@ -91,13 +97,14 @@ def calculadora():
                     print(f"a) El resultado de A+B es: {resultados.get('suma', 'No calculado')}")
                     print(f"b) El resultado de A-B es: {resultados.get('resta', 'No calculado')}")
                     resultado = resultados.get('division', 'No calculado')
-                    if isinstance(resultado, str):
+                    if type(resultado) == str:
                         print(f"c) {resultado}")
                     else:
                         print(f"c) El resultado de A/B es: {resultado}")
                     print(f"d) El resultado de A*B es: {resultados.get('multiplicacion', 'No calculado')}")
                     print(f"e) El factorial de A es: {resultados.get('factorial_a', 'No calculado')} y El factorial de B es: {resultados.get('factorial_b', 'No calculado')}\n")
                     
+                    # Reinicio de la calculadora
                     flag_calculado = False
                     flag_primer_operando = False
                     flag_segundo_operando = False

@@ -70,4 +70,18 @@ def factorial(a:int)->int:
             fact *= i
 
         return fact
-    
+
+def validar_entero(num: int)->int:
+    """recibe un numero y valida si es entero
+
+    Args:
+        num (int): numero a validar
+
+    Returns:
+        int: retorna el numero entero  
+    """
+    try:
+        entero = int(num)
+        return entero
+    except ValueError:
+        return None
