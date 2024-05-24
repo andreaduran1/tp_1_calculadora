@@ -25,9 +25,7 @@
 #     • Deberán contemplarse los casos de error (división por cero, etc.)
 #     • Documentar todas las funciones
 
-from os import system
 from funciones import *
-
 
 
 def menu(a,b)->str:
@@ -37,6 +35,7 @@ def menu(a,b)->str:
     print("3. Calcular todas las operaciones\n a)Calcular la suma (A+B)\n b)Calcular la resta (A-B)\n c)Calcular la division (A/B)\n d)Calcular la multiplicación (A*B)\n e)Calcular el factorial(A!)")
     print("4. Informar resultados")
     print("5. Salir\n")
+
 
 def calculadora():
     
@@ -98,7 +97,13 @@ def calculadora():
                         print(f"c) El resultado de A/B es: {resultado}")
                     print(f"d) El resultado de A*B es: {resultados.get('multiplicacion', 'No calculado')}")
                     print(f"e) El factorial de A es: {resultados.get('factorial_a', 'No calculado')} y El factorial de B es: {resultados.get('factorial_b', 'No calculado')}\n")
+                    
                     flag_calculado = False
+                    flag_primer_operando = False
+                    flag_segundo_operando = False
+                    a = "x"
+                    b = "y"
+
                 else:
                     print("Primero deberás calcular las operaciones para obtener los resultados.\n")
 
